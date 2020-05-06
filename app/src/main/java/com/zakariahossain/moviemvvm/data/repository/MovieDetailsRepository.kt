@@ -3,6 +3,7 @@ package com.zakariahossain.moviemvvm.data.repository
 import androidx.lifecycle.LiveData
 import com.zakariahossain.moviemvvm.data.api.MovieDbApiService
 import com.zakariahossain.moviemvvm.data.models.MovieDetails
+import com.zakariahossain.moviemvvm.data.models.MovieVideos
 import io.reactivex.disposables.CompositeDisposable
 
 class MovieDetailsRepository(private val apiService: MovieDbApiService) {
@@ -15,6 +16,11 @@ class MovieDetailsRepository(private val apiService: MovieDbApiService) {
     fun getSingleMovieDetails(movieId: Int): LiveData<MovieDetails> {
         movieDetailsDataSource.fetchMovieDetails(movieId)
         return movieDetailsDataSource.movieDetailsResponseLiveData
+    }
+
+    fun getSingleMovieVideos(movieId: Int): LiveData<MovieVideos> {
+        movieDetailsDataSource.fetchMovieVideos(movieId)
+        return movieDetailsDataSource.movieVideosResponseLiveData
     }
 
     fun getMovieDetailsNetworkState(): LiveData<NetworkState> {

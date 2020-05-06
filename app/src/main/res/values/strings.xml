@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MovieMVVM</string>
+    <string name="app_name">MovieMVVM11</string>
+    <string name="player_error">Error: needed updated YouTube App or %s</string>
 </resources>

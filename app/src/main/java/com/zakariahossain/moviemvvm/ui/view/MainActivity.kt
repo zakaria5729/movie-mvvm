@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.zakariahossain.moviemvvm.R
+import com.zakariahossain.moviemvvm.util.Constants.MOVIE_ID
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clickButton(view: View) {
         val intent = Intent(this, SingleMovieActivity::class.java)
-        intent.putExtra("movie_id", 181812)
+        intent.putExtra(MOVIE_ID, 338762)
         startActivity(intent)
     }
 }

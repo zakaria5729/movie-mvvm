@@ -3,6 +3,7 @@ package com.zakariahossain.moviemvvm.ui.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.zakariahossain.moviemvvm.data.models.MovieDetails
+import com.zakariahossain.moviemvvm.data.models.MovieVideos
 import com.zakariahossain.moviemvvm.data.repository.MovieDetailsRepository
 import com.zakariahossain.moviemvvm.data.repository.NetworkState
 import io.reactivex.disposables.CompositeDisposable
@@ -20,6 +21,10 @@ class SingleMovieViewModel(private val movieDetailsRepository: MovieDetailsRepos
 
     fun getSingleMovieDetails(movieId: Int): LiveData<MovieDetails> {
         return movieDetailsRepository.getSingleMovieDetails(movieId);
+    }
+
+    fun getSingleMovieVideos(movieId: Int): LiveData<MovieVideos> {
+        return movieDetailsRepository.getSingleMovieVideos(movieId);
     }
 
     override fun onCleared() {
